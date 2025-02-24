@@ -1,0 +1,99 @@
+// Base styling for the navbar
+#mainNav {
+  box-shadow: $box-shadow;
+  background-color: rgba(255, 255, 255, 1.7);
+  transition: background-color 0.2s ease;
+  padding-bottom: 6px !important;
+  padding-top: 6px !important;
+  .logoImageSize {
+    width: 100px;
+    @include media-breakpoint-up(lg) {
+      width: 164px;
+    }
+  }
+  .navbar-toggler {
+    border-color: #fff;
+  }
+  button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+  }
+  .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+  }
+  .navbar-nav {
+    .nav-item {
+      &.active {
+        .nav-link {
+          color: #1b76ae !important;
+        }
+      }
+
+      .nav-link {
+        color: $gray-600;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: $font-weight-bold;
+        font-size: 1rem;
+        padding: 0.75rem 0;
+        text-transform: uppercase;
+        &:hover,
+        &:active {
+          color: #1b76ae;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    // Base styling for the navbar - screen sizes greater than the large breakpoint
+    box-shadow: none;
+    background-color: transparent;
+    .navbar-brand {
+      color: fade-out($white, 0.3);
+      &:hover {
+        color: $white;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: fade-out($white, 0.3);
+          padding: 0 1rem;
+          &:hover {
+            color: $white;
+          }
+        }
+        &:last-child {
+          .nav-link {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  // Navbar styling applied when the page is scrolled
+  .site-container.navbar-scrolled #mainNav {
+    box-shadow: $box-shadow;
+    background-color: rgba(255, 255, 255, 1.7);
+    .navbar-brand {
+      color: $gray-900;
+      &:hover {
+        color: #1b76ae;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $gray-900;
+          &:hover {
+            color: #1b76ae;
+          }
+        }
+      }
+    }
+  }
+}
